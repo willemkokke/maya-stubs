@@ -3,7 +3,7 @@
     "configurations": [
         {
             "name": "Python: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "internalConsole",
@@ -15,8 +15,8 @@
             }
         },
         {
-            "name": "Mayapy: Generate Stubs",
-            "type": "python",
+            "name": "Generate Stubs",
+            "type": "debugpy",
             "request": "launch",
             "module": "maya_stubgen",
             "args": [
@@ -25,7 +25,7 @@
             ],
             "console": "internalConsole",
             "justMyCode": false,
-            "python": "${workspaceFolder}/mayapy.bat",
+            "subProcess": true,
             "presentation": {
                 "hidden": false,
                 "group": "Maya",
@@ -34,12 +34,11 @@
         },
         {
             "name": "MayaPy: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "internalConsole",
             "justMyCode": false,
-            "python": "${workspaceFolder}/mayapy.bat",
             "presentation": {
                 "hidden": false,
                 "group": "Maya",

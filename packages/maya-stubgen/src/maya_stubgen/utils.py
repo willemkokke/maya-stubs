@@ -3,14 +3,18 @@ import pathlib
 import shutil
 import sys
 import time
-from collections.abc import Iterator, Callable
+from collections.abc import Callable, Iterator
 from contextlib import contextmanager
 from pathlib import Path
-from typing import TypeVar, Optional
+from typing import Optional, TypeVar
 
 from typing_extensions import ParamSpec
 
-from PySide2 import QtCore, QtWidgets
+try:
+    from PySide2 import QtCore, QtWidgets
+except ImportError:
+    from PySide6 import QtCore, QtWidgets
+
 
 from . import _logging
 
@@ -115,7 +119,7 @@ def remove_outdated_cache() -> None:
         return
 
     maya_version_file = cache / ".maya_version"
-    if not maya_version_file.exists():
+    if maya_version_file.exists():
         cache_version = maya_version_file.read_text().strip()
         if cache_version == version:
             # cache is from current maya version, nothing to do

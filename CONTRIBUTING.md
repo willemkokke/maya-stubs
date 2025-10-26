@@ -69,7 +69,7 @@ The project is setup as an `uv` workspace where:
     - MacOS
       ```bash
       # mayapy cannot be used directly, use the framework distribution instead
-      uv venv --python /Applications/Autodesk/maya2024/Maya.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
+      uv venv --python /Applications/Autodesk/maya2025/Maya.app/Contents/Frameworks/Python.framework/Versions/Current/bin/python3
       ```
     Note: I don't use Linux or MacOS so I can't say that this will work for sure.
 - Generate the stubs with `uv run maya-stubgen generate-stubs src/maya-stubs`.

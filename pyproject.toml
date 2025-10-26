@@ -7,7 +7,12 @@ requires-python = ">=3.7"
 dependencies = []
 
 [tool.uv]
+
+# we always want to use the python interpreter from maya
+python-downloads = "never"
+
 dev-dependencies = [
+    "debugpy",
     "maya-stubgen",
 ]
 
